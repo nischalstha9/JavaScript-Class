@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Groceries</title>
+</head>
+
+<body>
+    <h3>Groceries</h3>
+    <ul id="list"></ul>
+
+    <script>
+        const ul = document.getElementById("list");
+        const items = ["apple", "orange", "Wheat", "rice"];
+        const html = items.map(item => {
+            return "<li>" + item + "</li>";
+        })
+        ul.innerHTML = html.join("");
+    </script>
+</body>
+
+</html>
