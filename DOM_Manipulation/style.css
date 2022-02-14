@@ -1,0 +1,22 @@
+*{
+    padding:0px;
+    margin:0px;
+}
+.hero{
+    display: flex;
+}
+.container{
+    margin: 1vh 15vw;
+}
+button{
+    background-color: aquamarine;
+    border: 5px ;
+    margin: 5px;
+    padding: 10px 15px;
+    border-radius: 5px;
+    color: white;
+    cursor: pointer;
+}
+li{
+    margin-left: 2vw;
+}
