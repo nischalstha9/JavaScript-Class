@@ -15,14 +15,18 @@
 // title.style.backgroundColor = 'red';
 // title.style.color = 'white';
 
-const list_items = document.querySelectorAll(".list-item")
+// const list_items = document.querySelectorAll(".list-item")
 
-list_items.forEach(item => { //setting bg color to yellow
-    item.style.backgroundColor = "yellow";
-})
+// list_items.forEach(item => { //setting bg color to yellow
+//     item.style.backgroundColor = "yellow";
+// })
+
+// setTimeout(() => {
+//     image.setAttribute("src", "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b6/Image_created_with_a_mobile_phone.png/1200px-Image_created_with_a_mobile_phone.png")
+// }, 5000);
 
 const image = document.querySelector("#img-chair")
-setTimeout(() => {
-    image.setAttribute("src", "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b6/Image_created_with_a_mobile_phone.png/1200px-Image_created_with_a_mobile_phone.png")
-}, 5000);
-
+image.setAttribute(
+    "src",
+    "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b6/Image_created_with_a_mobile_phone.png/1200px-Image_created_with_a_mobile_phone.png"
+)
