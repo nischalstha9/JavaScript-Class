@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>HTML Events</title>
+</head>
+
+<body>
+    <h1>Counter: <span id="count">0</span></h1>
+    <h5>Buttons using onlclick method on HTML Element</h5>
+    <button onclick=increaseCount()>Increase Count</button>
+    <button onclick=decreaseCount()>Decrease Count</button>
+    <button onclick=resetCount()>Reset Count</button>
+    <h5>Buttons using eventListners on HTML Element</h5>
+    <button id="increamentBtn">Increase Count</button>
+    <button id="decreamentBtn">Decrease Count</button>
+    <button id="resetBtn">Reset Count</button>
+
+    <script>
+        let count = 0;
+        const countElement = document.getElementById("count");
+        const setCountHTML = (count) => {
+            countElement.innerText = count;
+        }
+        const increaseCount = () => {
+            count++;
+            setCountHTML(count)
+        }
+        const decreaseCount = () => {
+            count--;
+            setCountHTML(count)
+        }
+        const resetCount = () => {
+            count = 0;
+            setCountHTML(count)
+        }
+        const increamentBtn = document.getElementById("increamentBtn");
+        const decreamentBtn = document.getElementById("decreamentBtn");
+        const resetBtn = document.getElementById("resetBtn");
+        increamentBtn.addEventListener("click", increaseCount);
+        decreamentBtn.addEventListener("click", decreaseCount);
+        resetBtn.addEventListener("click", resetCount);
+    </script>
+</body>
+
+</html>
