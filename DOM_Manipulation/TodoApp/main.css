@@ -1,0 +1,47 @@
+*{
+    margin: 0px;
+    padding:0px;
+    font-family:Arial, Helvetica, sans-serif;
+    font-weight: 100;
+}
+.container{
+    margin: 5px 10%;
+    background-color: rgba(0, 128, 128, 0.24);
+    padding: 5px 15px;
+    border-radius: 10px;
+}
+.tasks-section{
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+}
+.task{
+    display: flex;
+    flex-direction: row;
+    width: 90%;
+    background-color: teal;
+    padding: 5px 15px;
+    margin-top: 15px;
+    border-radius: 8px;
+    color: white;
+}
+.title{
+    width: 75%;
+    align-items: center;
+}
+
+button{
+    padding:5px 15px;
+    border: none;
+    background-color: red;
+    border-radius: 5px;
+    color: white;
+}
+
+#submitBtn{
+    background-color: rgb(13, 85, 13);
+}
+input{
+    height: 5vh;
+    width: 70%;
+}
