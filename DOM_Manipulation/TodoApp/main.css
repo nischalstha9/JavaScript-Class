@@ -1,47 +1,65 @@
-*{
-    margin: 0px;
-    padding:0px;
-    font-family:Arial, Helvetica, sans-serif;
-    font-weight: 100;
+* {
+  margin: 0px;
+  padding: 0px;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: 100;
 }
-.container{
-    margin: 5px 10%;
-    background-color: rgba(0, 128, 128, 0.24);
-    padding: 5px 15px;
-    border-radius: 10px;
+.container {
+  margin: 5px 10%;
+  background-color: rgba(0, 128, 128, 0.24);
+  padding: 15px 15px;
+  border-radius: 10px;
 }
-.tasks-section{
-    align-items: center;
-    justify-content: center;
-    width: 100%;
+.tasks-section {
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  max-height: 80vh;
+  overflow-y: scroll;
+  margin-top: 8px;
 }
-.task{
-    display: flex;
-    flex-direction: row;
-    width: 90%;
-    background-color: teal;
-    padding: 5px 15px;
-    margin-top: 15px;
-    border-radius: 8px;
-    color: white;
+.task {
+  display: flex;
+  color: white;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 5px;
+  background-color: teal;
+  border-radius: 8px;
+  padding: 5px 15px;
 }
-.title{
-    width: 75%;
-    align-items: center;
-}
-
-button{
-    padding:5px 15px;
-    border: none;
-    background-color: red;
-    border-radius: 5px;
-    color: white;
+.hero-title {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 5px;
 }
 
-#submitBtn{
-    background-color: rgb(13, 85, 13);
+button {
+  padding: 5px 15px;
+  border: none;
+  background-color: red;
+  border-radius: 5px;
+  color: white;
 }
-input{
-    height: 5vh;
-    width: 70%;
+
+#taskForm {
+  display: flex;
+}
+#submitBtn {
+  background-color: rgb(13, 85, 13);
+}
+input {
+  min-height: 15px;
+  height: 3vh;
+  flex-grow: 1;
+  border-radius: 5px;
+  margin: 1px 2px 1px 0px;
+  padding: 5px 10px;
+  border: none;
+  outline: none;
+}
+input:focus {
+  border: 1px solid rgb(13, 85, 13);
+  outline: none;
 }
