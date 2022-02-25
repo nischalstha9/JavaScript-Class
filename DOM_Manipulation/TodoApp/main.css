@@ -17,6 +17,12 @@
   max-height: 80vh;
   overflow-y: scroll;
   margin-top: 8px;
+  -ms-overflow-style: none; /* IE and Edge hide scrollbar*/
+  scrollbar-width: none; /* Firefox hide scrollbar*/
+}
+.tasks-section::-webkit-scrollbar {
+  /*hide scrollbar chrome*/
+  display: none;
 }
 .task {
   display: flex;
@@ -34,7 +40,16 @@
   justify-content: center;
   margin-bottom: 5px;
 }
-
+.title {
+  overflow-x: scroll;
+  -ms-overflow-style: none; /* IE and Edge hide scrollbar*/
+  scrollbar-width: none; /* Firefox hide scrollbar*/
+  margin-right: 12px;
+}
+.title::-webkit-scrollbar {
+  /*hide scrollbar chrome*/
+  display: none;
+}
 button {
   padding: 5px 15px;
   border: none;
@@ -64,10 +79,9 @@ button:focus {
 }
 input {
   min-height: 15px;
-  height: 3vh;
   flex-grow: 1;
   border-radius: 5px;
-  margin: 1px 2px 1px 0px;
+  margin: 1px 10px 1px 0px;
   padding: 5px 10px;
   border: none;
   outline: none;
