@@ -1,6 +1,12 @@
-let input = document.getElementById("taskNameInput");
+const input = document.getElementById("taskNameInput");
 let tasks = JSON.parse(localStorage.getItem("todo_app_tasks")) || [];
-let form = document.getElementById("taskForm");
+const form = document.getElementById("taskForm");
+const tasksSection = document.querySelector(".tasks-section");
+
+const saveTasks = () => {
+  localStorage.setItem("todo_app_tasks", JSON.stringify(tasks));
+};
+
 const addTask = (task) => {
   let id;
   if (tasks.length > 0) {
@@ -10,22 +16,19 @@ const addTask = (task) => {
   }
   if (task !== "") {
     tasks.push({ title: task, id: id });
-    localStorage.setItem("todo_app_tasks", JSON.stringify(tasks));
+    saveTasks();
     refreshTasks();
     input.value = "";
     input.focus();
   }
 };
 
-form.addEventListener("submit", (e) => {
-  e.preventDefault();
-  addTask(input.value);
-});
-
-const tasksSection = document.querySelector(".tasks-section");
-function refreshTasks() {
-  let html = tasks.map((task) => {
-    return `
+const refreshTasks = () => {
+  let html = tasks
+    .slice()
+    .reverse()
+    .map((task) => {
+      return `
             <div class="task">
                 <div class="title">
                     <h4>${task.title}</h4>
@@ -35,15 +38,21 @@ function refreshTasks() {
                 </div>
             </div>
         `;
-  });
+    });
   tasksSection.innerHTML = html.join("");
-}
+};
 
-function delItem(id) {
+const delItem = (id) => {
   tasks = tasks.filter(function (task) {
     return parseInt(id) !== parseInt(task.id);
   });
-  localStorage.setItem("todo_app_tasks", JSON.stringify(tasks));
+  saveTasks();
   refreshTasks();
-}
+};
+
+form.addEventListener("submit", (e) => {
+  e.preventDefault();
+  addTask(input.value);
+});
+
 refreshTasks();

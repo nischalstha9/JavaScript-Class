@@ -41,12 +41,25 @@ button {
   background-color: red;
   border-radius: 5px;
   color: white;
+  cursor: pointer;
+  transition: 0.3s;
+}
+button:hover,
+button:focus {
+  outline: none;
+  background-color: rgb(148, 36, 36);
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
 #taskForm {
   display: flex;
 }
 #submitBtn {
+  background-color: rgb(15, 155, 15);
+}
+#submitBtn:hover,
+#submitBtn:focus,
+#submitBtn:focus-visible {
   background-color: rgb(13, 85, 13);
 }
 input {
