@@ -1,10 +1,11 @@
+const CONST_TASKS = "todo_app_tasks";
 const input = document.getElementById("taskNameInput");
-let tasks = JSON.parse(localStorage.getItem("todo_app_tasks")) || [];
+let tasks = JSON.parse(localStorage.getItem(CONST_TASKS)) || [];
 const form = document.getElementById("taskForm");
 const tasksSection = document.querySelector(".tasks-section");
 
 const saveTasks = () => {
-  localStorage.setItem("todo_app_tasks", JSON.stringify(tasks));
+  localStorage.setItem(CONST_TASKS, JSON.stringify(tasks));
 };
 
 const addTask = (task) => {

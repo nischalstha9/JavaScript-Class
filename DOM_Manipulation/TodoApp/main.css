@@ -4,6 +4,9 @@
   font-family: Arial, Helvetica, sans-serif;
   font-weight: 100;
 }
+body {
+  background-color: rgba(0, 128, 128, 0.24);
+}
 .container {
   margin: 5px 10%;
   background-color: rgba(0, 128, 128, 0.24);
@@ -60,7 +63,8 @@ button {
   transition: 0.3s;
 }
 button:hover,
-button:focus {
+button:focus,
+button:active {
   outline: none;
   background-color: rgb(148, 36, 36);
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
@@ -74,6 +78,7 @@ button:focus {
 }
 #submitBtn:hover,
 #submitBtn:focus,
+#submitBtn:active,
 #submitBtn:focus-visible {
   background-color: rgb(13, 85, 13);
 }
