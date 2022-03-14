@@ -34,3 +34,31 @@ console.log(cars);
 //adding items to first
 cars.unshift("Mc Laren");
 console.log(cars);
+
+let nums = [1, 2, 3, 4, 5, 55, 12, 45, 67, 988, 1000];
+console.log(nums.reduce((a, b) => a + b));
+console.log(
+  nums.filter((num) => {
+    return num % 2 == 0;
+  })
+);
+console.log(
+  nums.map((num) => {
+    return num * 2;
+  })
+);
+console.log(
+  `The smallest number is ${
+    nums.sort((a, b) => {
+      parseInt(a) - parseInt(b);
+    })[0]
+  }`
+);
+console.log(`The greatest number is ${nums[nums.length - 1]}`);
+
+const text = ["nischal", "is", "a", "boy"];
+text.newJoin = function (operator) {
+  return text.reduce((a, b) => a + operator + b);
+};
+console.log(text.newJoin(" baby "));
+console.log(text.reduce((a, b) => a + b));

@@ -1,12 +1,18 @@
 let nums = [1, 2, 3, 4, 5, 55, 12, 45, 67, 988, 1000];
-for (let i = 0; i < nums.length; i++) {
-    for (let j = i + 1; j < nums.length; j++) {
-        if (nums[i] > nums[j]) {
-            let temp = nums[i];
-            nums[i] = nums[j];
-            nums[j] = temp;
-        }
-    }
-}
-console.log(`The greatest number is ${nums[nums.length - 1]}`)
-console.log(`The smallest number is ${nums[0]}`)
+// for (let i = 0; i < nums.length; i++) {
+//     for (let j = i + 1; j < nums.length; j++) {
+//         if (nums[i] > nums[j]) {
+//             let temp = nums[i];
+//             nums[i] = nums[j];
+//             nums[j] = temp;
+//         }
+//     }
+// }
+console.log(
+  `The smallest number is ${
+    nums.sort((a, b) => {
+      parseInt(a) - parseInt(b);
+    })[0]
+  }`
+);
+console.log(`The greatest number is ${nums[nums.length - 1]}`);
