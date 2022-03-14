@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Toggle</title>
+    <style>
+        .hidden {
+            visibility: hidden;
+        }
+
+        .show {
+            visibility: visible;
+        }
+    </style>
+</head>
+
+<body>
+    <h1 class="hidden">Hi I just appeared</h1>
+    <button>Click Me to show/hide text.</button>
+    <script>
+        const txt = document.querySelector("h1")
+        const btn = document.querySelector("button")
+        btn.addEventListener("click", () => {
+            txt.classList.toggle("show")
+        })
+    </script>
+</body>
+
+</html>
