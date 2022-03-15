@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Attendance Sheet</title>
+        <link rel="stylesheet" href="style.css">
+        <script defer src="./app.js"></script>
+    </head>
+
+    <body>
+        <table>
+            <thead>
+                <tr>
+                    <th>Roll</th>
+                    <th>Student Name</th>
+                    <th>Actions
+                        <input type="radio" onclick="setAllPresent()">All Present
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+
+                <tr>
+                    <td>1</td>
+                    <td>Nischal</td>
+                    <td>
+                        <input type="radio" data-studentId="1" name="status1" id="present" vaue="present">Present
+                        <input type="radio" data-studentId="1" name="status1" id="absent" vaue="absent">Absent
+                        <input type="radio" data-studentId="1" name="status1" id="late" vaue="late">Late
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+
+        <form action="" id="NewStudentForm">
+            <table>
+                <tr>
+                    <td>
+                        Name:
+                    </td>
+                    <td>
+                        <input type="text" name="student_name" id="new_student_name" required autocomplete="off"
+                            autofocus>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        Roll:
+                    </td>
+                    <td>
+                        <input type="number" name="student_roll" id="new_student_roll" required autocomplete="off">
+                    </td>
+                </tr>
+            </table>
+            <button id="addStudentBtn" type="submit" value="submit">Submit</button>
+            <small class="error"></small>
+        </form>
+
+    </body>
+
+</html>
