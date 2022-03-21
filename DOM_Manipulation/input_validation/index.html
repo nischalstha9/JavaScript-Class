@@ -1,56 +1,57 @@
 <!DOCTYPE html>
 <html lang="en">
 
-    <head>
-        <meta charset="UTF-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Form</title>
-    </head>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form</title>
+</head>
 
-    <body>
-        <table>
-            <tr>
-                <td><input type="text" name="name" id="name" placeholder="name"></td>
-                <td>
-                    <p id="name_txt_op"></p>
-                </td>
-            </tr>
-            <tr>
-                <td><select name="vehicle" id="vehicle_select">
-                        <option value="car">Car</option>
-                        <option value="van">van</option>
-                        <option value="bus">bus</option>
-                        <option value="bike">bike</option>
-                    </select>
-                </td>
-                <td>
-                    <p id="vehicle_op"></p>
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    Male
-                    <input type="radio" name="gender" id="gender" value="male">
-                    Female
-                    <input type="radio" name="gender" id="gender" value="female">
-                </td>
-                <td>
-                    <p id="gender_op"></p>
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    <input type="checkbox" name="accept_checkbox" id="accept_terms" value="accept">Accept Terms
-                </td>
-                <td>
-                    <p id="checkbox_op"></p>
-                </td>
-            </tr>
-        </table>
+<body>
+    <table>
+        <tr>
+            <td><input type="text" name="name" id="name" placeholder="name"></td>
+            <td>
+                <p id="name_txt_op"></p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <select name="vehicle" id="vehicle_select">
+                    <option value="car">Car</option>
+                    <option value="van">van</option>
+                    <option value="bus">bus</option>
+                    <option value="bike">bike</option>
+                </select>
+            </td>
+            <td>
+                <p id="vehicle_op"></p>
+            </td>
+        <tr>
+        <tr>
+            <td>
+                Male
+                <input type="radio" name="gender" id="gender" value="male">
+                Female
+                <input type="radio" name="gender" id="gender" value="female">
+            </td>
+            <td>
+                <p id="gender_op"></p>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <input type="checkbox" name="accept_checkbox" id="accept_terms" value="accept">Accept Terms
+            </td>
+            <td>
+                <p id="checkbox_op"></p>
+            </td>
+        </tr>
+    </table>
 
-        <script src="./app.js"></script>
+    <script src="./app.js"></script>
 
-    </body>
+</body>
 
 </html>

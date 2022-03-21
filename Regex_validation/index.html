@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Regex Validation</title>
+</head>
+
+<body>
+    <form action="" id="main-form">
+        <input type="text" id="username" name="username">
+        <button type="submit">Submit</button>
+        <p id="main-feedback"></p>
+    </form>
+
+    <script>
+        const form = document.querySelector("#main-form")
+        const feedback = document.querySelector("#main-feedback")
+
+        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
+        const phoneRegex = /\d{10}/
+
+        form.addEventListener("submit", (e) => {
+            e.preventDefault();
+            const username = form.username.value;
+            const usernamePattern = /^[a-zA-Z]{5,12}[0-9]{0,3}$/;
+            if (usernamePattern.test(username)) {
+                feedback.innerText = "Valid"
+            } else {
+                feedback.innerText = "InValid"
+            }
+        })
+
+    </script>
+</body>
+
+</html>
