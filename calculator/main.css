@@ -1,0 +1,22 @@
+*{
+    font-family: 'Fira Code', Courier, monospace;
+}
+button{
+    width: 100%;
+}
+.display{
+    border: 1px solid black;
+    border-radius: 5px;
+    height: 25px;
+    min-width: 80%;
+    text-align: right;
+    padding-right: 5px;
+    margin: 5px;
+    background-color: white;
+}
+.container{
+    border: 2px solid black;
+    border-radius: 5px;
+    width: max-content;
+    background-color: rgb(127, 219, 255);
+}
