@@ -23,7 +23,7 @@
             console.log(atIndex < 1);
             console.log(dotIndex < (emailValue.length - 2));
             console.log(dotIndex - atIndex < 3);
-            if (atIndex < 1 || dotIndex < (emailValue.length - 2) || (dotIndex - atIndex) < 3) {
+            if (atIndex < 1 || dotIndex >= (emailValue.length - 2) || (dotIndex - atIndex) < 3) {
                 emailFeedback.innerText = "Please enter valid email!"
             } else {
                 emailFeedback.innerText = "Email Valid!"
