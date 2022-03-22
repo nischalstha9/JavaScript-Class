@@ -24,12 +24,11 @@ button {
   align-items: flex-end;
   justify-content: center;
   font-weight: 600;
-  overflow-x: scroll;
 }
 .container {
   border: 2px solid black;
   border-radius: 5px;
-  width: 415px;
+  width: max-content;
   background-color: rgb(127, 219, 255);
   padding: 10px;
 }
