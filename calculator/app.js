@@ -1,7 +1,7 @@
 const funcButtons = document.querySelectorAll(".calc-btns")
 let evalStack = ""
 const output = document.querySelector(".display")
-const operationalBtns = ["=", "AC"]
+const operationalBtns = ["=", "AC", "DEL"]
 
 funcButtons.forEach(btn => {
     let btnValue = btn.innerText;
@@ -11,7 +11,11 @@ funcButtons.forEach(btn => {
             output.innerText = evalStack;
         } else if (btnValue == "=") {
             output.innerText = eval(evalStack);
-        } else {
+        } else if (btnValue == "DEL") {
+            evalStack = evalStack.slice(0, -1)
+            output.innerText = evalStack;
+        }
+        else {
             evalStack = ""
             output.innerText = evalStack;
         }
