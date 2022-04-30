@@ -1,35 +1,31 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Email validation</title>
-</head>
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Email validation</title>
+    </head>
 
-<body>
-    <input type="text" id="email"><br>
-    <small id="email-feedback"></small>
+    <body>
+        <input type="text" id="email"><br>
+        <small id="email-feedback"></small>
 
-    <script>
-        const email = document.querySelector("#email")
-        const emailFeedback = document.querySelector("#email-feedback")
-        email.addEventListener("keyup", (e) => {
-            let emailValue = e.target.value;
-            let atIndex = emailValue.indexOf('@');
-            let dotIndex = emailValue.lastIndexOf(".");
-            console.log(emailValue);
-            console.log(atIndex < 1);
-            console.log(dotIndex < (emailValue.length - 2));
-            console.log(dotIndex - atIndex < 3);
-            if (atIndex < 1 || dotIndex >= (emailValue.length - 2) || (dotIndex - atIndex) < 3) {
-                emailFeedback.innerText = "Please enter valid email!"
-            } else {
-                emailFeedback.innerText = "Email Valid!"
-            }
-        })
-    </script>
-</body>
+        <script>
+            const email = document.querySelector("#email")
+            const emailFeedback = document.querySelector("#email-feedback")
+            email.addEventListener("keyup", (e) => {
+                let emailValue = e.target.value;
+                let atIndex = emailValue.indexOf('@');
+                let dotIndex = emailValue.lastIndexOf(".");
+                if (atIndex < 1 || dotIndex >= (emailValue.length - 2) || (dotIndex - atIndex) < 3) {
+                    emailFeedback.innerText = "Please enter valid email!"
+                } else {
+                    emailFeedback.innerText = "Email Valid!"
+                }
+            })
+        </script>
+    </body>
 
 </html>

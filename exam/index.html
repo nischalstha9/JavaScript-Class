@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Form Validation</title>
+    </head>
+
+    <body>
+        <form action="" onsubmit="return validate_form()">
+            <table>
+                <tr>
+                    <td>
+                        <label for="full_name">Full Name</label>
+                    </td>
+                    <td>
+                        <input type="text" name="first_name" id="first_name" placeholder="First name">
+                        <input type="text" name="last_name" id="last_name" placeholder="Last name">
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        Company
+                    </td>
+                    <td>
+                        <input type="text" name="company" id="company" placeholder="Your company name">
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        Email
+                    </td>
+                    <td>
+                        <input type="text" name="email" id="email" placeholder="email@example.com">
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        Phone number
+                    </td>
+                    <td>
+                        <input type="text" name="country_code" id="country_code" placeholder="+xxx">
+                        <input type="text" name="phone" id="phone" placeholder="98xxxxxxxx">
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        Country
+                    </td>
+                    <td>
+                        <select name="country" id="country">
+                            <option value="Nepal">Nepal</option>
+                            <option value="USA">USA</option>
+                            <option value="Australia">Australia</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        Sex
+                    </td>
+                    <td>
+                        <input type="radio" name="gender" id="male" value="male">Male
+                        <input type="radio" name="gender" id="female" value="female">Female
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        Language
+                    </td>
+                    <td>
+                        <input type="checkbox" name="language" id="nepali" value="nepali">Nepali
+                        <input type="checkbox" name="language" id="Sanskrit" value="Sanskrit">Sanskrit
+                        <input type="checkbox" name="language" id="Other" value="Other">Other
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        Comment
+                    </td>
+                    <td>
+                        <input type="text" name="comment" id="comment" placeholder="Say hello">
+                    </td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td>
+                        <input type="checkbox" name="accept_terms" id="accept_terms"> I agree with <a href="#">Terms and
+                            Conditions</a>
+                    </td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td><button type="submit">Register</button></td>
+                </tr>
+            </table>
+        </form>
+
+        <script>
+            const validate_form = () => {
+                let fname = document.querySelector("#first_name");
+                let lname = document.querySelector("#last_name");
+                let company = document.querySelector("#company");
+                let email = document.querySelector("#email");
+                let country_code = document.querySelector("#country_code");
+                let phone = document.querySelector("#phone");
+                let country = document.querySelector("#country");
+                let sex = document.getElementsByName("gender");
+                let language = document.getElementsByName("language");
+                let comment = document.querySelector("#comment");
+                let accept_terms = document.querySelector("#accept_terms");
+
+                let flag = true;
+
+                if (fname.value.length < 5)
+                    flag = false;
+                return flag;
+                if (lname.value.length < 5)
+                    flag = false;
+                return flag;
+                if (company.value.length < 5)
+                    flag = false;
+                return flag;
+
+            }
+        </script>
+
+    </body>
+
+</html>

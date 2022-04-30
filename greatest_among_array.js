@@ -8,11 +8,9 @@ let nums = [1, 2, 3, 4, 5, 55, 12, 45, 67, 988, 1000];
 //         }
 //     }
 // }
-console.log(
-  `The smallest number is ${
-    nums.sort((a, b) => {
-      parseInt(a) - parseInt(b);
-    })[0]
-  }`
-);
+
+nums.sort((a, b) => {
+  parseInt(a) - parseInt(b);
+});
+console.log(`The smallest number is ${nums[0]}`);
 console.log(`The greatest number is ${nums[nums.length - 1]}`);

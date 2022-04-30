@@ -7,7 +7,7 @@ funcButtons.forEach((btn) => {
   let btnValue = btn.innerText;
   btn.addEventListener("click", (e) => {
     if (!operationalBtns.includes(btnValue)) {
-      evalStack += btnValue;
+      evalStack = evalStack == "0" ? btnValue : evalStack + btnValue;
       output.innerText = evalStack;
     } else if (btnValue == "=") {
       try {
@@ -19,7 +19,7 @@ funcButtons.forEach((btn) => {
       evalStack = evalStack.slice(0, -1);
       output.innerText = evalStack;
     } else {
-      evalStack = "";
+      evalStack = "0";
       output.innerText = evalStack;
     }
   });
