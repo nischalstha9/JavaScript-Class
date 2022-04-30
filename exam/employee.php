@@ -1,9 +1,18 @@
 <?php
 
-$conn = new mysqli("localhost", "root", "", "student_marks");
+// $conn = new mysqli("localhost", "root", "", "student_marks");
+// $conn = new PDO("mysql:host=127.0.0.1;dbname=student_marks", "root", "");
 
-if ($conn->connect_errno) {
-    echo "Connection Error " . $conn->connect_error;
+// if ($conn->connect_errno) {
+//     echo "Connection Error " . $conn->connect_error;
+//     exit();
+// }
+
+try {
+    $conn = new PDO("mysql:host=127.0.0.1;dbname=student_marks", "root", "");
+    $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+} catch (PDOException $e) {
+    echo 'Connection failed: ' . $e->getMessage();
     exit();
 }
 
@@ -12,13 +21,15 @@ if (isset($_POST['submitBtn'])) {
     $experience = $_POST["experience"];
     $salary = $_POST["salary"];
 
-    $sql = $conn->prepare("INSERT INTO employee (empName, empWorkExperience, empSalary) VALUES(?,?,?)");
-    $sql->bind_param("sdd", $name, $experience, $salary);
+    $sql = $conn->prepare("INSERT INTO employee (empName, empWorkExperience, empSalary) VALUES(:empName,:empWorkExperience,:empSalary)");
+    // $sql->bindParam("sdd", $name, $experience, $salary);
+    $sql->bindParam(":empName", $name, PDO::PARAM_STR);
+    $sql->bindParam(":empWorkExperience", $experience, PDO::PARAM_INT);
+    $sql->bindParam(":empSalary", $salary, PDO::PARAM_INT);
     $sql->execute();
-    if ($sql->affected_rows > 0) {
+    if ($sql->rowCount() > 0) {
         Header("Location: ./employee.php");
     }
-    $sql->close();
 }
 
 ?>

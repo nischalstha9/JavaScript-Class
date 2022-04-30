@@ -8,10 +8,10 @@ if ($conn->connect_errno) {
 }
 
 // $sql = $conn->prepare("UPDATE employee SET `employee`.`bonus`=empSalary*.10 WHERE `employee`.`empWorkExperience`>5 OR `employee`.`empSalary`>30000");
-$sql = $conn->prepare("UPDATE employee SET bonus = case
-                        when empSalary >= 30000 OR empWorkExperience >= 5 then empSalary*0.10
-                        else empSalary*0.05
-                        end");
+$sql = $conn->prepare("UPDATE employee SET bonus = CASE
+                        WHEN empSalary >= 30000 OR empWorkExperience >= 5 THEN empSalary*0.10
+                        ELSE empSalary*0.05
+                        END");
 
 $sql->execute();
 if ($sql->affected_rows > 0) {
@@ -19,3 +19,7 @@ if ($sql->affected_rows > 0) {
 } else {
     echo "Bonus Distribution Failed!";
 }
+
+?>
+
+<a href="./employee.php">Go home</a>

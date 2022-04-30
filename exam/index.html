@@ -99,6 +99,17 @@
         </form>
 
         <script>
+
+            const email_validator = (email) => {
+                let emailValue = email
+                let atIndex = emailValue.indexOf('@');
+                let dotIndex = emailValue.lastIndexOf(".");
+                if (atIndex < 1 || dotIndex >= (emailValue.length - 2) || (dotIndex - atIndex) < 3) {
+                    return false;
+                } else {
+                    return true;
+                }
+            }
             const validate_form = () => {
                 let fname = document.querySelector("#first_name");
                 let lname = document.querySelector("#last_name");
@@ -121,6 +132,8 @@
                     flag = false;
                 return flag;
                 if (company.value.length < 5)
+                    flag = false;
+                if (!email_validator(company.value.length))
                     flag = false;
                 return flag;
 
