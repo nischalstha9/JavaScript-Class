@@ -17,7 +17,7 @@ if (isset($_POST['submitBtn'])) {
     $mark3 = $_POST['mark3'];
     $mark4 = $_POST['mark4'];
 
-    $percentage = $mark1 + $mark2 + $mark3 + $mark4 / 400 * 100;
+    $percentage = ($mark1 + $mark2 + $mark3 + $mark4) / 400 * 100;
 
     $post_stu_sql = $conn->prepare("INSERT INTO marks (StudentName,RollNo,mark1,mark2,mark3,mark4,percentage) VALUES(?,?,?,?,?,?,?)");
     $post_stu_sql->bind_param("sdddddd", $name, $roll, $mark1, $mark2, $mark3, $mark4, $percentage);

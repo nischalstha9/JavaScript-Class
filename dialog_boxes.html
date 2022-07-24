@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="en">
+
+    <head>
+        <title>Dialog Box</title>
+    </head>
+
+    <body>
+        <p><button id="Alert">Alert</button></p>
+        <p><button id="Confirm">Confirm</button></p>
+        <p><button id="Dialog">Dialog</button></p>
+
+
+        <script>
+            const alertbtn = document.getElementById("Alert");
+            const confirmbtn = document.getElementById("Confirm");
+            const dialogbtn = document.getElementById("Dialog");
+
+            alertbtn.addEventListener("click", () => {
+                alert("You have clicked alert!");
+            })
+            confirmbtn.addEventListener("click", () => {
+                let userResp = confirm("Do you want to continue?");
+                alert("You gave response " + userResp);
+            })
+            dialogbtn.addEventListener("click", () => {
+                let userResp = prompt("What is your name?")
+                alert("Your name is " + userResp);
+            })
+        </script>
+    </body>
+
+</html>

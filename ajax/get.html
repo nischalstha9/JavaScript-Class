@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en">
+
+    <head>
+        <!-- Required meta tags -->
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+        <!-- Bootstrap CSS -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+            integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+        <title>AJAX GET</title>
+    </head>
+
+    <body>
+        <div class='container'>
+            <h1>AJAX GET</h1>
+            <button class="getItems">get Items</button>
+            <div id="databox"></div>
+        </div>
+
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+        <script>
+            const databox = $("#databox");
+            const getContentFxn = () => {
+                $.ajax({
+                    url: "https://nischalstha9.pythonanywhere.com/api/portfolio/skills/",
+                    type: 'GET',
+                    dataType: 'json', // added data type
+                    success: function (res) {
+                        let data = JSON.stringify(res)
+                        databox.text(
+                            data
+                        )
+                    },
+                    error: function (err) {
+                        console.log(err)
+                    }
+                });
+            }
+
+            let btn = $(".getItems")
+            btn.click(getContentFxn)
+        </script>
+
+
+    </body>
+
+</html>

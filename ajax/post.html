@@ -1,0 +1,63 @@
+<!-- https://nischalstha9.pythonanywhere.com/api/portfolio/send-message/ -->
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>XHR POST Request</title>
+    </head>
+
+    <body>
+        <form id="mgsForm">
+            <input name="name" placeholder="name" type="text" id="name">
+            <input name="email" placeholder="email" type="email" id="email">
+            <input name="message" placeholder="message" type="text" id="msg">
+            <input type="submit" value="submit" id="submit">
+        </form>
+        <div id="data">
+
+        </div>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script>
+            let div = $("#data");
+            let submit = $("#submit");
+
+            function sendMessage(data) {
+
+
+                $.ajax({
+                    url: "https://nischalstha9.pythonanywhere.com/api/portfolio/send-message/",
+                    method: "POST",
+                    data: data,
+                    headers: {
+                        Accept: "application/json, text/javascript"
+                    },
+                    success: function (resp) {
+                        console.log(resp)
+                        div.text(JSON.stringify(resp))
+                    },
+                    error: function (err) {
+                        console.log(err)
+                    }
+                })
+            }
+
+            submit.on("click", (e) => {
+                e.preventDefault()
+                let formData = {
+                    "name": $("#name").val(),
+                    "email": $("#email").val(),
+                    "message": $("#msg").val(),
+                }
+                console.log(formData)
+                sendMessage(formData)
+            })
+
+        </script>
+    </body>
+
+</html>

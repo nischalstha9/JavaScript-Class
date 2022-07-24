@@ -1,0 +1,52 @@
+<!-- https://nischalstha9.pythonanywhere.com/api/portfolio/send-message/ -->
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>XHR POST Request</title>
+    </head>
+
+    <body>
+        <form id="mgsForm">
+            <input name="name" placeholder="name" type="text" id="name">
+            <input name="email" placeholder="email" type="email" id="email">
+            <input name="message" placeholder="message" type="text" id="msg">
+            <input type="submit" value="submit" id="submit">
+        </form>
+        <div id="data">
+
+        </div>
+
+        <script>
+            let div = document.getElementById("data");
+            let form = document.getElementById("mgsForm");
+            let submit = document.getElementById("submit");
+
+            function sendMessage() {
+                let formdata = new FormData(form);
+                let xhttp = new XMLHttpRequest();
+                xhttp.open("POST", "https://nischalstha9.pythonanywhere.com/api/portfolio/send-message/");
+                xhttp.setRequestHeader("Accept", "application/json, text/javascript")
+                xhttp.onreadystatechange = function () {
+                    if (this.status === 201) {
+                        data.innerHTML = this.response
+                    }
+                    else {
+                        data.innerHTML = this.response
+                    }
+                }
+                xhttp.send(formdata);
+                form.reset();
+            }
+
+            submit.addEventListener("click", (e) => { e.preventDefault(); sendMessage() })
+
+        </script>
+    </body>
+
+</html>

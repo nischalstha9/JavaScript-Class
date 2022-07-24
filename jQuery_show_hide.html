@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+
+    <head>
+        <!-- Required meta tags -->
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+        <!-- Bootstrap CSS -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+            integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+        <title>Jquery show hide</title>
+    </head>
+
+    <body>
+        <div class='container'>
+            <h1>Jquery show hide</h1>
+        </div>
+        <button id="show-hide">Click to see magic</button>
+
+        <!-- Optional JavaScript -->
+        <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+        <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+            integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+            crossorigin="anonymous"></script>
+        <script>
+
+            let btn = $("#show-hide");
+            let div = $(".container");
+
+            btn.on("click", function () {
+                if (div.is(":hidden")) {
+                    div.show()
+                } else {
+                    div.hide();
+                }
+            })
+        </script>
+    </body>
+
+</html>
